@@ -1,5 +1,5 @@
 {
-  "name": "react-nes",
+  "name": "@eggtonic/react-openweather-widget",
   "version": "1.0.0",
   "main": "build/index.js",
   "module": "build/index.es.js",
@@ -31,7 +31,7 @@
     "Typescript",
     "Weather",
     "Widget",
-    "OpenWeather",
+    "OpenWeatherMap",
     "Storybook"
   ],
   "author": "EggTronic",
