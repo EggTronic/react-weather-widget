@@ -14,9 +14,12 @@ const WeatherHourlyWrapper = styled.div`
 
 const WeatherHourlySection = styled.div`
   width: 500px;
-  height: 4vh;
+  height: 50px;
   display: flex;
   justify-content: space-evenly;
+  h2 {
+    margin: 0;
+  }
 `;
 
 const HourlyCard = styled.div`

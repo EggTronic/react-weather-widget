@@ -1,5 +1,6 @@
 import useAsync from './useAsync';
 import useGeoLocation from './useGeoLocation';
+import { OpenWeatherMapExclude } from '../types/weatherWidget';
 
 /**
  * 
@@ -13,7 +14,7 @@ import useGeoLocation from './useGeoLocation';
 export default function useFetchWeather(
   key: string,
   units?: string,
-  exclude?: string[]
+  exclude?: OpenWeatherMapExclude
 ) {
   const { latitude, longitude, loading, error } = useGeoLocation();
 

@@ -14,7 +14,10 @@ const DailyCard = styled.div`
   width: 100px;
   align-items: center;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
+  h2 {
+    margin: 0;
+  }
 `;
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];

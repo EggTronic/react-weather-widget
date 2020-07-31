@@ -1,4 +1,4 @@
-declare interface CurrentWeatherData {
+export interface CurrentWeatherData {
   dt: number;
   sunrise: number;
   sunset: number;
@@ -20,7 +20,7 @@ declare interface CurrentWeatherData {
   }[];
 }
 
-declare interface HourlyWeatherData {
+export interface HourlyWeatherData {
   dt: number;
   temp: number;
   feels_like: number;
@@ -38,10 +38,10 @@ declare interface HourlyWeatherData {
     icon: string;
   }[];
   pop: number;
-  rain?: undefined | {'1h': number};
+  rain?: undefined | { '1h': number };
 }
 
-declare interface DailyWeatherData {
+export interface DailyWeatherData {
   dt: number;
   sunrise: number;
   sunset: number;
@@ -76,7 +76,7 @@ declare interface DailyWeatherData {
   uvi: number;
 }
 
-declare interface WeatherData {
+export interface WeatherData {
   lat: number;
   lon: number;
   timezone: string;
@@ -86,29 +86,23 @@ declare interface WeatherData {
   daily: DailyWeatherData[];
 }
 
-declare interface WeatherWidgetPorps {
-  apiKey: string;
-  width?: number;
-  height?: number;
-  geo?: {
-    lat: string,
-    lon: string
-  }
-  theme?: {
-    color?: [string, string];
-    mainFontSize?: string | number; 
-    subFontSize?: string | number;
-    mainFontColor?: string;
-    subFontColor?: string;
-  };
-  exclude?: 
+export type OpenWeatherMapExclude =
   ['main'] |
   ['daily'] |
   ['hourly'] |
   ['daily', 'hourly'] |
   ['main', 'daily'] |
-  ['main', 'hourly']
-  ;
-  dayRange?: number;
-  hourRange?: number;
+  ['main', 'hourly'] |
+  null |
+  undefined;
+
+export interface WeatherWidgetTheme {
+  color: [string, string];
+  width: string;
+  height: string;
+  mainFontSize: string;
+  subFontSize: string;
+  mainFontColor: string;
+  subFontColor: string;
+  hrColor: string;
 }

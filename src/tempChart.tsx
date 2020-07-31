@@ -31,14 +31,14 @@ function TempChart({
       >
         <Line 
           position="hour*value" 
-          color='white'
+          color='black'
           label={[
             'value',
             (v) => {
               return {
                 content: `${v  }°C`,
                 style: {
-                  fill: 'white',
+                  fill: 'black',
                 }
               };
             }

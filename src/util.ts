@@ -1,5 +1,6 @@
 
 import { TempChartProps } from './tempChart';
+import { WeatherData } from './types/weatherWidget';
 
 const ICON_BASE_URL = 'http://openweathermap.org/img/wn/';
 
