@@ -13,9 +13,10 @@ export interface GeoLocationSensorState {
   timestamp: number | null;
   error?: Error | PositionError;
   once: boolean;
+  shouldDetectLocation: boolean;
 }
 
-const useGeolocation = (options?: PositionOptions): GeoLocationSensorState => {
+const useGeolocation = (hasGeo: boolean, options?: PositionOptions): GeoLocationSensorState => {
   const [state, setState] = useState<GeoLocationSensorState>({
     loading: true,
     accuracy: null,
@@ -26,8 +27,18 @@ const useGeolocation = (options?: PositionOptions): GeoLocationSensorState => {
     longitude: null,
     speed: null,
     timestamp: Date.now(),
-    once: true
+    once: true,
+    shouldDetectLocation: true
   });
+
+  if (hasGeo && state.shouldDetectLocation) {
+    setState({
+      ...state,
+      shouldDetectLocation: false,
+      loading: false,
+    })
+  }
+
   let finishOnce = false;
   let mounted = true;
   let watchId: any;
@@ -55,12 +66,16 @@ const useGeolocation = (options?: PositionOptions): GeoLocationSensorState => {
     mounted && setState(oldState => ({ ...oldState, loading: false, error }));
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(onEvent, onEventError, options);
-    watchId = navigator.geolocation.watchPosition(onEvent, onEventError, options);
+    if (state.shouldDetectLocation) {
+      navigator.geolocation.getCurrentPosition(onEvent, onEventError, options);
+      watchId = navigator.geolocation.watchPosition(onEvent, onEventError, options);
+    }
 
     return () => {
       mounted = false;
-      navigator.geolocation.clearWatch(watchId);
+      if (state.shouldDetectLocation) {
+        navigator.geolocation.clearWatch(watchId);
+      }
     };
   }, []);
 

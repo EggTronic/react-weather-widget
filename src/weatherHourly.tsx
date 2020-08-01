@@ -1,24 +1,25 @@
-/* eslint-disable import/no-extraneous-dependencies, react/require-default-props */
 import React from 'react';
 import styled from 'styled-components';
+import { WeatherData, WeatherWidgetTheme } from './types/weatherWidget';
 import TempChart from './tempChart';
-import { getHourlyData, ICON_BASE_URL } from './util';
+import { getHourlyData, ICON_BASE_URL } from './utils/index';
 
 const WeatherHourlyWrapper = styled.div`
-  width: 500px;
-  height: 200px;
+  width: ${(props: {theme:WeatherWidgetTheme}) => props.theme.width};
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: column;
 `;
 
 const WeatherHourlySection = styled.div`
-  width: 500px;
+  width: ${(props: {theme:WeatherWidgetTheme}) => props.theme.width};
   height: 50px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   h2 {
     margin: 0;
+    font-size: ${(props: {theme:WeatherWidgetTheme}) => props.theme.mainFontSize};
+    color: ${(props: {theme:WeatherWidgetTheme}) => props.theme.mainFontColor};
   }
 `;
 
@@ -31,11 +32,17 @@ const HourlyCard = styled.div`
 
 interface WeatherHourlyProps {
   hourly: WeatherData['hourly'];
-  from?: number;
-  to?: number;
+  from: number;
+  to: number;
+  theme: WeatherWidgetTheme;
 }
 
-function WeatherHourly({ hourly, from = 1, to = 6 }: WeatherHourlyProps) {
+function WeatherHourly({ 
+  hourly, 
+  from = 1, 
+  to = 6, 
+  theme 
+}: WeatherHourlyProps) {
   const hourlyData = hourly.slice(from, to);
 
   return (
@@ -49,11 +56,9 @@ function WeatherHourly({ hourly, from = 1, to = 6 }: WeatherHourlyProps) {
 
       </WeatherHourlySection>
       <TempChart 
-        data={getHourlyData(hourly)} 
-        height="100px"
-        width="530px"
-        padding={[20, 30, 10, -10]}
+        data={getHourlyData(hourly, from, to)} 
         pure={true}
+        theme={theme}
       />
       <WeatherHourlySection>
         {hourlyData.map(hourData =>

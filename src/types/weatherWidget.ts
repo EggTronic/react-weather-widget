@@ -105,4 +105,9 @@ export interface WeatherWidgetTheme {
   mainFontColor: string;
   subFontColor: string;
   hrColor: string;
+  lineChartPadding: [number, number, number, number];
+  lineChartColor: string;
+  lineChartFontSize: number;
+  lineChartFontColor: string;
+  lineChartHeight: string;
 }

@@ -1,13 +1,18 @@
-/* eslint-disable import/no-extraneous-dependencies, react/require-default-props */
 import React from 'react';
 import styled from 'styled-components';
-import { ICON_BASE_URL } from './util';
+import { DailyWeatherData, WeatherWidgetTheme } from './types/weatherWidget';
+import { ICON_BASE_URL } from './utils/index';
 
 const WeatherDailyWrapper = styled.div`
-  width: 500px;
-  height: 200px;
+  width: ${(props: { theme: WeatherWidgetTheme }) => props.theme.width};
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  font-size: ${(props: {theme:WeatherWidgetTheme}) => props.theme.subFontSize};
+  color: ${(props: {theme:WeatherWidgetTheme}) => props.theme.subFontColor};
+  h2 {
+    margin: 0;
+    font-size: ${(props: {theme:WeatherWidgetTheme}) => props.theme.mainFontSize};
+  }
 `;
 
 const DailyCard = styled.div`
@@ -15,17 +20,14 @@ const DailyCard = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  h2 {
-    margin: 0;
-  }
 `;
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 interface WeatherDailyProps {
   daily: DailyWeatherData[];
-  from?: number;
-  to?: number;
+  from: number;
+  to: number;
 }
 
 function WeatherDaily({ daily, from = 1, to = 6 }: WeatherDailyProps) {
@@ -37,7 +39,7 @@ function WeatherDaily({ daily, from = 1, to = 6 }: WeatherDailyProps) {
         <DailyCard key={dayData.dt}>
           <h2>{days[new Date(dayData.dt * 1000).getDay()]}</h2>
           <img
-            src={`${ICON_BASE_URL + dayData.weather[0].icon  }.png`}
+            src={`${ICON_BASE_URL + dayData.weather[0].icon}.png`}
             alt='weather-info'
           />
           <p>

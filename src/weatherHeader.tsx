@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import styled from 'styled-components';
 import {
@@ -7,15 +6,16 @@ import {
   CurrentWeatherData,
   WeatherWidgetTheme
 } from './types/weatherWidget';
-import { ICON_BASE_URL } from './util';
+import { ICON_BASE_URL } from './utils/index';
 
 const WeatherHeaderWrapper = styled.div`
   width: ${(props: {theme:WeatherWidgetTheme}) => props.theme.width};
-  height: 200px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   h1 {
     margin: 2px;
+    font-size: ${(props: {theme:WeatherWidgetTheme}) => props.theme.mainFontSize};
+    color: ${(props: {theme:WeatherWidgetTheme}) => props.theme.mainFontColor};
   }
   p {
     color: ${(props: {theme:WeatherWidgetTheme}) => props.theme.subFontColor};
@@ -28,6 +28,7 @@ const WeatherHeaderWrapper = styled.div`
 
 const HeaderLeft = styled.div`
   width: 130px;
+  margin-left: 30px;
   text-align: right;
   display: flex;
   align-items: center;
@@ -44,6 +45,7 @@ const HeaderCenter = styled.div`
 
 const HeaderRight = styled.div`
   width: 130px;
+  margin-right: 30px;
   text-align: left;
   display: flex;
   align-items: center;
@@ -62,23 +64,22 @@ interface WeatherHeaderProps {
   today: DailyWeatherData;
   current: CurrentWeatherData;
   timezone: WeatherData['timezone'];
-  theme: WeatherWidgetTheme;
 }
 
 function WeatherHeader(
   { today,
     current,
     timezone,
-    theme
   }: WeatherHeaderProps) {
   return (
-    <WeatherHeaderWrapper theme={theme}>
-      <HeaderLeft theme={theme}>
+    <WeatherHeaderWrapper>
+      <HeaderLeft>
         <br />
         <br />
         <br />
         <p>
           <span role="img" aria-label="sun">☀️</span>
+          <br />
           <br />
           {Math.round(today.temp.max)}°C
         </p>
@@ -86,29 +87,32 @@ function WeatherHeader(
         <p>
           <span role="img" aria-label="ice">❄️</span>
           <br />
+          <br />
           {Math.round(today.temp.min)}°C
         </p>
       </HeaderLeft>
-      <HeaderCenter theme={theme}>
+      <HeaderCenter>
         <h1> {timezone.split('/')[1]} </h1>
         <h1>{Math.round(current.temp)}°C</h1>
         <WeatherIcon src={`${ICON_BASE_URL + current.weather[0].icon}@2x.png`} />
         <p style={{ transform: 'translateY(-280%)' }}>{current.weather[0].description}</p>
       </HeaderCenter>
-      <HeaderRight theme={theme}>
+      <HeaderRight>
         <br />
         <br />
         <br />
         <p>
           <span role="img" aria-label="wind">💨</span>
           <br />
-          {current.wind_speed} m/s
+          <br />
+          {current.wind_speed}m/s
         </p>
         <br />
         <p>
           <span role="img" aria-label="drop">💧</span>
           <br />
-          {current.humidity} %
+          <br />
+          {current.humidity}%
         </p>
       </HeaderRight>
     </WeatherHeaderWrapper>

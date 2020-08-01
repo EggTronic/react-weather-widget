@@ -1,7 +1,7 @@
 import useAsync from './useAsync';
 import useGeoLocation from './useGeoLocation';
-import { OpenWeatherMapExclude } from '../types/weatherWidget';
-
+import { OpenWeatherMapExclude, WeatherData } from '../types/weatherWidget';
+import { BASE_API_URL } from '../utils/index';
 /**
  * 
  * @param key api key from openweathermap
@@ -14,16 +14,20 @@ import { OpenWeatherMapExclude } from '../types/weatherWidget';
 export default function useFetchWeather(
   key: string,
   units?: string,
-  exclude?: OpenWeatherMapExclude
+  exclude?: OpenWeatherMapExclude,
+  geo?: {
+    lat: string,
+    lon: string
+  } | undefined
 ) {
-  const { latitude, longitude, loading, error } = useGeoLocation();
 
+  const { latitude, longitude, loading, error, shouldDetectLocation } = useGeoLocation(!!geo);
   const state = useAsync(async () => {
     if (loading) return { loading: true };
     if (error) return { error, loading: false };
-    const url = 'https://api.openweathermap.org/data/2.5/onecall?' +
-      `lat=${latitude}` +
-      `&lon=${longitude}` +
+    const url = `${BASE_API_URL}` + 
+      `lat=${geo?.lat || latitude}` +
+      `&lon=${geo?.lon || longitude}` +
       `${units ? `&units=${units}` : ''}` +
       `${exclude ? `&exclude=${exclude.join(',')}` : ''}` +
       `&appid=${key}`;
@@ -35,17 +39,26 @@ export default function useFetchWeather(
   const errorMsg: string | undefined
     = state.value?.error?.message
     || state.error?.message;
-
+  
   /** there is a hack to check if it is currently loading geo or weather data
     * if loading is true then geo is loading.
     * if geo loaded, and if there is no error and no timezone 
     * then weather is loading.
     */
   let loadingMsg: string | null = null;
-  if (loading) {
-    loadingMsg = 'Geo Locating ...';
-  } else if (!state.value.timezone && !errorMsg) {
-    loadingMsg = 'Fetching Weather Data ...';
+
+  if (shouldDetectLocation) {
+    if (loading) {
+      loadingMsg = 'Geo Locating ...';
+    } else if (!state.value.timezone && !errorMsg) {
+      loadingMsg = 'Fetching Weather Data ...';
+    }
+  }
+
+  if (!shouldDetectLocation) {
+    if (state.loading && !errorMsg) {
+      loadingMsg = 'Fetching Weather Data ...';
+    }
   }
 
   const weatherData: WeatherData | null

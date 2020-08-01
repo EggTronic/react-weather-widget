@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { DependencyList, useCallback, useState, useRef } from 'react';
 import useMountedState from './useMountedState';
-import { FnReturningPromise, PromiseType } from './util';
+import { FnReturningPromise, PromiseType } from '../utils/index';
 
 export type AsyncState<T> =
   | {

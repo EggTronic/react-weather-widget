@@ -86,13 +86,15 @@
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-sass": "^1.2.2",
     "rollup-plugin-typescript2": "^0.25.2",
-    "styled-components": "^4.0.0",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "bizcharts": "^4.0.11"
+    "bizcharts": "4.0.11",
+    "styled-components": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   }
 }

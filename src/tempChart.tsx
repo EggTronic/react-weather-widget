@@ -1,44 +1,42 @@
 import React from 'react';
 import { Chart, Line } from 'bizcharts';
+import { WeatherWidgetTheme } from './types/weatherWidget';
 
 export interface TempChartProps {
   data: {
     hour: string; 
     value: number;
   }[],
-  width: number | string;
-  height: number | string;
-  padding?: number[];
   pure: boolean;
+  theme: WeatherWidgetTheme;
 }
 
 function TempChart({
   data,
-  width,
-  height,
-  padding,
-  pure
+  pure,
+  theme
 }:TempChartProps) {
   return (
     <div>
       <Chart
-        padding={padding}
+        padding={theme.lineChartPadding}
         autoFit
-        height={height}
-        width={width}
+        height={theme.lineChartHeight}
+        width={theme.width}
         data={data}
         pure={pure}
       >
         <Line 
           position="hour*value" 
-          color='black'
+          color={theme.lineChartColor}
           label={[
             'value',
             (v) => {
               return {
                 content: `${v  }°C`,
                 style: {
-                  fill: 'black',
+                  fill: theme.lineChartFontColor,
+                  fontSize: theme.lineChartFontSize
                 }
               };
             }
