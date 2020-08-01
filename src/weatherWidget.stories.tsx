@@ -6,6 +6,8 @@ import WeatherWidget,
   defaultTheme
 } from './index';
 
+import LineChart from './lineChart';
+
 export default {
   title: 'WeatherWidget'
 };
@@ -13,20 +15,26 @@ export default {
 // this key is for demo only
 const DEMO_KEY = '30144e247241962034bf8e683f76406b';
 
-export const DefaultTheme = () => (
-  <div>
-    <WeatherWidget apiKey={DEMO_KEY} theme={defaultTheme} />
-  </div>
-);
+// export const DefaultTheme = () => (
+//   <div>
+//     <WeatherWidget apiKey={DEMO_KEY} theme={defaultTheme} />
+//   </div>
+// );
 
-export const LightTheme = () => (
-  <div>
-    <WeatherWidget apiKey={DEMO_KEY} theme={dayTheme} />
-  </div>
-);
+// export const LightTheme = () => (
+//   <div>
+//     <WeatherWidget apiKey={DEMO_KEY} theme={dayTheme} />
+//   </div>
+// );
 
-export const DarkTheme = () => (
+// export const DarkTheme = () => (
+//   <div>
+//     <WeatherWidget apiKey={DEMO_KEY} theme={nightTheme} />
+//   </div>
+// );
+
+export const Chart = () => (
   <div>
-    <WeatherWidget apiKey={DEMO_KEY} theme={nightTheme} />
+    <LineChart />
   </div>
 );

@@ -111,3 +111,7 @@ export interface WeatherWidgetTheme {
   lineChartFontColor: string;
   lineChartHeight: string;
 }
+
+export interface LineChartData {
+  [key: string]: number;
+}
