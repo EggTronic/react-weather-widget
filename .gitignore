@@ -1,3 +1,6 @@
 node_modules/
 build/
+lib/
+es/
+types/
 __snapshots__

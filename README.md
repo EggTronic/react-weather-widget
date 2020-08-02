@@ -1,6 +1,6 @@
 # react-weather-widget
 
-A nice weather widget for react based on openweather - [Demo](https://eggtronic.github.io/react-openweather-widget/)
+A nice weather widget for react based on openweather - [Demo](https://eggtronic.github.io/react-weather-widget/)
 
 <img src="./doc/img/defaultTheme.png" width="250" style="display: inline-block;"><img src="./doc/img/darkTheme.png" width="250" style="display: inline-block;"><img src="./doc/img/dayTheme.png" width="250" style="display: inline-block;">
 
@@ -11,17 +11,16 @@ A nice weather widget for react based on openweather - [Demo](https://eggtronic.
 - Customizable Theme
 - Geo Detection - detect you geo location by default
 
-### 🖥 Note
-- It requires a peer dependency of styled-components
-  ```
-  npm install --save styled-components
-  ``` 
+### 🖥 Peer Dependency
+- react: "^16.8.0"
+- react-dom: "^16.8.0"
+- styled-components: "^4.0.0"
 
 ### 🌈 Usage
 - Basic 
   ```JSX
   import React from 'react';
-  import WeatherWidget from '@eggtonic/react-openweather-widget';
+  import WeatherWidget from '@eggtonic/react-weather-widget';
 
   function Basic() {
     const key = 'xxx'; // your openweathermap api key
@@ -38,7 +37,7 @@ A nice weather widget for react based on openweather - [Demo](https://eggtronic.
     darkTheme,
     lightTheme,
     defaultTheme
-  } from '@eggtonic/react-openweather-widget';
+  } from '@eggtonic/react-weather-widget';
   function Theme() {
     const key = 'xxx'; // your openweathermap api key
 
@@ -54,7 +53,7 @@ A nice weather widget for react based on openweather - [Demo](https://eggtronic.
 - Customize Theme
   ```JSX
   import React from 'react';
-  import WeatherWidget from '@eggtonic/react-openweather-widget';
+  import WeatherWidget from '@eggtonic/react-weather-widget';
   function CustomTheme() {
     const key = 'xxx'; // your openweathermap api key
     const theme = {
@@ -91,7 +90,7 @@ A nice weather widget for react based on openweather - [Demo](https://eggtronic.
     WeatherHourly, 
     WeatherDaily,
     LineChart
-  } from '@eggtonic/react-openweather-widget';
+  } from '@eggtonic/react-weather-widget';
 
   // you can use those child components independently
   ```
