@@ -1,5 +1,5 @@
 {
-  "name": "@eggtonic/react-openweather-widget",
+  "name": "@eggtonic/react-weather-widget",
   "version": "1.0.0",
   "main": "build/index.js",
   "module": "build/index.es.js",

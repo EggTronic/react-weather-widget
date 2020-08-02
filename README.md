@@ -1,4 +1,4 @@
-# react-openweather-widget
+# react-weather-widget
 
 A nice weather widget for react based on openweather - [Demo](https://eggtronic.github.io/react-openweather-widget/)
 
