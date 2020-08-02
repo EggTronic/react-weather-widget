@@ -3,16 +3,16 @@
 
 ☁️ A nice weather widget for react based on openweather - [Demo](https://eggtronic.github.io/react-weather-widget/)
 
-<span>![](https://img.shields.io/npm/dt/@eggtonic/react-weather-widget.svg)</span> <span class="badge-npmversion"><img src="https://badgen.net/badge/license/MIT/blue" alt="NPM version" /></span> <span>[![](https://img.shields.io/badge/0-dependency-blue.svg)](http://weibo.com/eyrefree777)</span> <span>[![](https://img.shields.io/badge/3-peerDependency-blue.svg)](http://weibo.com/eyrefree777)</span>
+<span>![](https://img.shields.io/npm/dt/@eggtronic/react-weather-widget.svg)</span> <span class="badge-npmversion"><img src="https://badgen.net/badge/license/MIT/blue" alt="NPM version" /></span> <span>[![](https://img.shields.io/badge/0-dependency-blue.svg)](http://weibo.com/eyrefree777)</span> <span>[![](https://img.shields.io/badge/3-peerDependency-blue.svg)](http://weibo.com/eyrefree777)</span>
 
 ---
 
-<img src="./doc/img/defaultTheme.png" width="250" style="display: inline-block;"><img src="./doc/img/darkTheme.png" width="250" style="display: inline-block;"><img src="./doc/img/dayTheme.png" width="250" style="display: inline-block;">
+<img src="./doc/img/defaultTheme.png" width="250" style="display: inline-block;"><img src="./doc/img/darkTheme.png" width="250" style="display: inline-block;">
 
 
 ---
 ### Install
-[![NPM](https://nodei.co/npm/@eggtonic/react-weather-widget.png)](https://npmjs.org/package/@eggtonic/react-weather-widget)
+[![NPM](https://nodei.co/npm/@eggtronic/react-weather-widget.png)](https://npmjs.org/package/@eggtronic/react-weather-widget)
  
 
 ---
@@ -31,7 +31,7 @@
 - Basic 
   ```JSX
   import React from 'react';
-  import WeatherWidget from '@eggtonic/react-weather-widget';
+  import WeatherWidget from '@eggtronic/react-weather-widget';
 
   function Basic() {
     const key = 'xxx'; // your openweathermap api key
@@ -48,7 +48,7 @@
     darkTheme,
     lightTheme,
     defaultTheme
-  } from '@eggtonic/react-weather-widget';
+  } from '@eggtronic/react-weather-widget';
   function Theme() {
     const key = 'xxx'; // your openweathermap api key
 
@@ -64,7 +64,7 @@
 - Customize Theme
   ```JSX
   import React from 'react';
-  import WeatherWidget from '@eggtonic/react-weather-widget';
+  import WeatherWidget from '@eggtronic/react-weather-widget';
   function CustomTheme() {
     const key = 'xxx'; // your openweathermap api key
     const theme = {
@@ -101,7 +101,7 @@
     WeatherHourly, 
     WeatherDaily,
     LineChart
-  } from '@eggtonic/react-weather-widget';
+  } from '@eggtronic/react-weather-widget';
 
   // you can use those child components independently
   ```
