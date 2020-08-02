@@ -1,6 +1,6 @@
 {
   "name": "@eggtronic/react-weather-widget",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
   "module": "es/index.js",
   "types": "es/index.d.ts",
