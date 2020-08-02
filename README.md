@@ -1,8 +1,19 @@
-# react-weather-widget
+# ☁️ react-weather-widget ☁️
 
-A nice weather widget for react based on openweather - [Demo](https://eggtronic.github.io/react-weather-widget/)
+
+☁️ A nice weather widget for react based on openweather - [Demo](https://eggtronic.github.io/react-weather-widget/)
+
+<span>![](https://img.shields.io/npm/dt/@eggtonic/react-weather-widget.svg)</span> <span class="badge-npmversion"><img src="https://badgen.net/badge/license/MIT/blue" alt="NPM version" /></span> <span>[![](https://img.shields.io/badge/0-dependency-blue.svg)](http://weibo.com/eyrefree777)</span> <span>[![](https://img.shields.io/badge/3-peerDependency-blue.svg)](http://weibo.com/eyrefree777)</span>
+
+---
 
 <img src="./doc/img/defaultTheme.png" width="250" style="display: inline-block;"><img src="./doc/img/darkTheme.png" width="250" style="display: inline-block;"><img src="./doc/img/dayTheme.png" width="250" style="display: inline-block;">
+
+
+---
+### Install
+[![NPM](https://nodei.co/npm/@eggtonic/react-weather-widget.png)](https://npmjs.org/package/@eggtonic/react-weather-widget)
+ 
 
 ---
 ### ✨ Feature
