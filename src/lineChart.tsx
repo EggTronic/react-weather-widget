@@ -29,7 +29,7 @@ function LineChart({
   padding = [40, 40],
   labelPadding = [-9, -10],
   customLabel = (val: number) => {
-    return `${val} %`;
+    return `${val} °C`;
   },
   lineWidth = 2,
   lineColor = '#000',
