@@ -113,7 +113,7 @@
 | className | string |  | Additional CSS class for the root DOM node |
 | apiKey | string | | Your api key from [OpenWeatherMap](https://openweathermap.org/) |
 | geo | `{lat: string, lon: string}` or `undefined` | undefined | Widget detects your geo by default, you can also specify your own geo location |
-| theme | [WeatherWidgetTheme](./src/types/weatherWidget.ts)| [defaulTheme](./src/theme.ts) | Customize theme |
+| theme | [WeatherWidgetTheme](./src/types/weatherWidget.ts)| [defaultTheme](./src/theme.ts) | Customize theme |
 | exclude | [OpenWeatherMapExclude](./src/types/weatherWidget.ts) | undefined | OpenWeatherMap api config, exclude daily/hourly/current wealther data|
 | dayRange | [number, number] | [1, 6] | Specify how many days' weather to display (start from next day)|
 | hourRange | [number, number] | [1, 6] | Specify how many hours' weather to display (start from next hour)|
