@@ -2,12 +2,9 @@
 
 A nice weather widget for react based on openweather - [Demo](https://eggtronic.github.io/react-openweather-widget/)
 
-
 <img src="./doc/img/defaultTheme.png" width="250" style="display: inline-block;">
-
 <img src="./doc/img/darkTheme.png" width="250" style="display: inline-block;">
-
-<img src="./doc/img/lightTheme.png" width="250" style="display: inline-block;">
+<img src="./doc/img/dayTheme.png" width="250" style="display: inline-block;">
 
 ---
 #### Feature
