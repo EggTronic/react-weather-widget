@@ -3,7 +3,8 @@
 
 ☁️ A nice weather widget for react based on openweather - [Demo](https://eggtronic.github.io/react-weather-widget/)
 
-<span>![](https://img.shields.io/npm/dt/@eggtronic/react-weather-widget.svg)</span> <span class="badge-npmversion"><img src="https://badgen.net/badge/license/MIT/blue" alt="NPM version" /></span> <span>[![](https://img.shields.io/badge/0-dependency-blue.svg)](http://weibo.com/eyrefree777)</span> <span>[![](https://img.shields.io/badge/3-peerDependency-blue.svg)](http://weibo.com/eyrefree777)</span>
+
+<span>![](https://img.shields.io/npm/dt/@eggtronic/react-weather-widget.svg)</span> <span class="badge-npmversion"><img src="https://badgen.net/badge/license/MIT/blue" alt="NPM version" /></span> <span>![](https://img.shields.io/badge/0-dependency-blue.svg)</span> <span>![](https://img.shields.io/badge/3-peerDependency-blue.svg)</span>
 
 ---
 
