@@ -2,24 +2,22 @@
 
 A nice weather widget for react based on openweather - [Demo](https://eggtronic.github.io/react-openweather-widget/)
 
-<img src="./doc/img/defaultTheme.png" width="250" style="display: inline-block;">
-<img src="./doc/img/darkTheme.png" width="250" style="display: inline-block;">
-<img src="./doc/img/dayTheme.png" width="250" style="display: inline-block;">
+<img src="./doc/img/defaultTheme.png" width="250" style="display: inline-block;"><img src="./doc/img/darkTheme.png" width="250" style="display: inline-block;"><img src="./doc/img/dayTheme.png" width="250" style="display: inline-block;">
 
 ---
-#### Feature
+### ✨ Feature
 - Light Weight - the only peer dependency is styled-components
 - Typescript Support
 - Customizable Theme
 - Geo Detection - detect you geo location by default
 
-#### Note
+### 🖥 Note
 - It requires a peer dependency of styled-components
   ```
   npm install --save styled-components
   ``` 
 
-#### Usage
+### 🌈 Usage
 - Basic 
   ```JSX
   import React from 'react';
@@ -98,7 +96,7 @@ A nice weather widget for react based on openweather - [Demo](https://eggtronic.
   // you can use those child components independently
   ```
 ---
-#### 📝 Props
+### 📝 Props
 | Name         | Type    | Default | Description |
 | ------------ | ------- | ------- | ----------- |
 | className | string |  | Additional CSS class for the root DOM node |
@@ -126,6 +124,6 @@ npm run storybook
 
 
 
-## License
+### License
 
 MIT © [EggTronic](https://github.com/eggtronic)
