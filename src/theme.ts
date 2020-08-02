@@ -9,11 +9,12 @@ export const defaultTheme: WeatherWidgetTheme = {
   mainFontColor: '#fff',
   subFontColor: '#fff',
   hrColor: '#fff',
-  lineChartPadding: [20, 0, 10, -10],
+  lineChartPadding: [45, 30],
+  lineChartLabelPadding: [-10, -10],
   lineChartColor: '#fff',
-  lineChartFontColor: '#fff',
-  lineChartFontSize: 12,
-  lineChartHeight: '100px'
+  lineChartLabelColor: '#fff',
+  lineChartLabelSize: 1,
+  lineChartHeight: '120px'
 };
 
 export const nightTheme: WeatherWidgetTheme = {
@@ -25,11 +26,12 @@ export const nightTheme: WeatherWidgetTheme = {
   mainFontColor: '#fff',
   subFontColor: '#fff',
   hrColor: '#fff',
-  lineChartPadding: [20, 0, 10, -10],
+  lineChartPadding: [45, 30],
+  lineChartLabelPadding: [-10, -10],
   lineChartColor: '#fff',
-  lineChartFontColor: '#fff',
-  lineChartFontSize: 12,
-  lineChartHeight: '100px'
+  lineChartLabelColor: '#fff',
+  lineChartLabelSize: 1,
+  lineChartHeight: '120px'
 };
 
 export const dayTheme: WeatherWidgetTheme = {
@@ -41,9 +43,10 @@ export const dayTheme: WeatherWidgetTheme = {
   mainFontColor: '#000',
   subFontColor: '#000',
   hrColor: '#000',
-  lineChartPadding: [20, 0, 10, -10],
+  lineChartPadding: [45, 30],
+  lineChartLabelPadding: [-10, -10],
   lineChartColor: '#000',
-  lineChartFontColor: '#000',
-  lineChartFontSize: 12,
-  lineChartHeight: '100px'
+  lineChartLabelColor: '#000',
+  lineChartLabelSize: 1,
+  lineChartHeight: '120px'
 };

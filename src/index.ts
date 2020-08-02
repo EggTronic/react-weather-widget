@@ -1,4 +1,10 @@
 import WeatherWidget from './weatherWidget';
+import WeatherDaily from './weatherDaily';
+import WeatherHeader from './weatherHeader';
+import WeatherHourly from './weatherHourly';
+import useFetchWeather from './hooks/useFetchWeather';
+import useGeoLocation from './hooks/useGeoLocation';
+
 import {
   dayTheme,
   nightTheme,
@@ -8,7 +14,12 @@ import {
 export {
   dayTheme,
   nightTheme,
-  defaultTheme
+  defaultTheme,
+  useFetchWeather,
+  useGeoLocation,
+  WeatherDaily,
+  WeatherHeader,
+  WeatherHourly
 };
 
 export default WeatherWidget;

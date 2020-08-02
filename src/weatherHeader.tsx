@@ -41,6 +41,7 @@ const HeaderLeft = styled.div`
 const HeaderCenter = styled.div`
   height: 200px;
   text-align: center;
+  margin-top: 10px;
 `;
 
 const HeaderRight = styled.div`

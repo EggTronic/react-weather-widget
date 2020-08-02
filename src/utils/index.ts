@@ -1,8 +1,7 @@
 
 /* eslint-disable */
-import { TempChartProps } from '../tempChart';
+import { LineChartData } from '../types/weatherWidget';
 import { WeatherData } from '../types/weatherWidget';
-
 
 export type FnReturningPromise = (...args: any[]) => Promise<any>;
 export type PromiseType<P extends Promise<any>> = P extends Promise<infer T> ? T : never;
@@ -14,22 +13,13 @@ const getHourlyData = (
   hourlyData: WeatherData['hourly'], 
   from: number, 
   to: number
-): TempChartProps['data'] => {
-  const data: TempChartProps['data'] = [];
+): LineChartData => {
+  const data: LineChartData = {};
   hourlyData.slice(from, to).forEach(d => {
-    data.push({
-      hour: `${new Date(d.dt * 1000).getHours()  }:00`,
-      value: Math.round(d.temp)
-    });
+    data[`${new Date(d.dt * 1000).getHours()  }:00`] = Math.round(d.temp);
   });
   return data;
 };
-
-// const getExclude = (exclude: ): string[] => {
-//   const exclude = [];
-
-//   return 
-// }
 
 export {
   getHourlyData,

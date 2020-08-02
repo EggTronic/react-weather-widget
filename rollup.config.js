@@ -12,10 +12,15 @@ export default {
   output: [
     {
       file: pkg.main,
-      format: "umd",
+      format: "cjs",
       exports: "named",
-      sourcemap: false,
-      name: "WeatherWidget"
+      sourcemap: true
+    },
+    {
+      file: pkg.module,
+      format: "es",
+      exports: "named",
+      sourcemap: true
     }
   ],
   plugins: [
@@ -43,11 +48,7 @@ export default {
           "isElement",
           "isValidElementType",
           "ForwardRef"
-        ],
-        "node_modules/bizcharts/lib/index.js": [
-          "Chart",
-          "Line"
-        ],
+        ]
       }
     }),
     uglify()
