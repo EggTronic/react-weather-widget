@@ -56,7 +56,7 @@ function LineChart({
       const max = Math.max(...v);
       const min = Math.min(...v);
       const xStep = canvasElm.width / (k.length * r);
-      const yStep = canvasElm.height / (max - min) * 0.5;
+      const yStep = (max !== min) ? canvasElm.height / (max - min) * 0.5 : 0;
 
       // start point (x, y)
       let x = padding[0];
