@@ -59,6 +59,7 @@ const HeaderRight = styled.div`
 const WeatherIcon = styled.img`
   width: 130px;
   transform: translateY(-20%);
+  display: initial;
 `;
 
 interface WeatherHeaderProps {
